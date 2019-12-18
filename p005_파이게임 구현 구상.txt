@@ -1,0 +1,60 @@
+---------------------------- Sprite 부분----------------------------
+1. 이미지 파일 가져오기
+2. 이미지 파일 위치별로 분해하기
+3. ?
+
+ +)pillow 다운받기
+
+실제 구현함수
+class Sprites(object):
+	def __init__(self):
+		self.x = ?
+		self.y = ?
+		self.image = pygame.image.load("abcd.png").convert_alpha();
+
+	def draw(self):
+		screen.blit(self.image, (self.x, self.y))
+#여기까지는 스프라이트 생성 부분, 하지만 이미지 분리는 더 필요하다!
+#아래는 main 부분에서의 동작 부분
+
+def main():
+	sprites = Sprite()
+	#이미지 관련 자료는 이렇게 가져온다.
+	while True:
+		clock.tick(60)
+		for event in pygame.event.get():
+			if event.type == pygame.QUIT:
+				sys.exit()
+		screen.fill(black)
+		#여기가 핵심!
+		player.draw()
+		pygame.display.update()
+
+if __name__ == "__main__":
+	main()
+---------------------------------------------------------------------------------------
+>> 이미 만들어진 값을 가져왔다는 전제 아래, 가장 효율적인 자르는 방법이다!
+>> 1개의 image / 다수의 images를 가져오는 방식이다.
+
+ss = spritesheet.spriteshee('somespritesheet.png')
+# Sprite is 16x16 pixels at location 0,0 in the file...
+image = ss.image_at((0, 0, 16, 16))
+images = []
+# Load two images into an array, their transparent bit is (255, 255, 255)
+images = ss.images_at((0, 0, 16, 16),(17, 0, 16,16), colorkey=(255, 255, 255))
+
+#  가져온 이미지는 해당 위치에 직사각형 형태로 출력 가능하다!!
+screen.blit(imgage, (0,0))
+
+#  이미지의 크기를 바꿔줄 수 있다! (회전 / 확대 가능!) - 두 가지
+IMAGE_BIG = pygame.transform.rotozoom(IMAGE, 0, 2)
+IMAGE_BIG2 = pygame.transform.scale(IMAGE, (?,?))
+#아래 방식이 화질이 훨씬~ 우월하다! 아래 방법을 쓰도록 하자!
+
+#pillow를 다운받았다면 아래처럼 범위를 자를 수 있다.
+img.crop((20,70,300,140))
+
+#기존의 함수를 수정 필요!!
+ subsurface 생성 방법으로 처리하자!
+image3 = pygame.image.load('스프라이트_슬라임형태.png').convert_alpha()
+image33 = image3.subsurface((0,0,50,50))

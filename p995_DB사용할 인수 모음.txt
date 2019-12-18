@@ -1,0 +1,56 @@
+타입명은 Number, String, List 로 나눠서 적겠습니다.
+게임 상에서만 사용되는 여기 없는 변수들도 있습니다. (조도나 습도 같은 변수들은 센서로 받으면 되니까)
+
+<사용자 정보>
+	> 아이디와 비밀번호(보안 필요)
+ID (String)
+PW (String)
+Code (Number) : 회원 번호
+Reg(String) : 가입 날짜
+Friend(list) : 친구 저장을 위해서 만듬 / multi value가 가능하다고 함
+
+<펫 정보>
+	> 펫의 다양한 정보들 포함
+Pet_type (Number) : 펫의 종류로 2번 진화하는 것을 가정하고 3자리 수로 설정
+		  기본체1번 : 100 -> 진화1 : 110 -> 진화2 : 111
+		  기본체2번 : 200 -> 진화1 : 210 -> 진화2 : 211
+Pet_exp (Number) : 경험치
+Pet_sat (Number) : 포만감
+Pet_hap (Number) : 행복도
+Pet_slp (Number) : 수면도
+Pet_temp (Number) : 캐릭터 온도
+
+<설정 저장>
+	> 여러 설정에 대해  bit 연산으로 연산. (0,1)이 아닌 값도 있지만 값이 단순한다.
+setup (Number)
+
+<소모성 아이템 모음>
+	>item 하나 당 4개의 아이템 정보 보관
+coin (Number)
+item01 (Number) : 아이템 정보
+item02
+item03
+item04
+item05
+
+<업적 모음>
+	> 여러 업적이 존재하지만 기본적으로는 달성 여부(0,1)만 저장하기에 bit 연산으로 연산
+	> achieve 1개 당 20개의 업적. 2개로 해서 총 40개의 업적. / 2^20 : 숫자 크기는 100만
+	> 활용은 994 인수활용방법에 적혀있다.
+achieve1 (Number)
+achieve2 (Number)
+
+<인테리어 모음>
+	> 획득 여부(0,1)만 저장하기에 bit 연산으로 연산 (2종류)
+Interior (Number)
+
+
+<미니게임 관련>
+	> 미니게임 최고 기록을 위해서 만듬
+	> 전부 Number
+bestscore_stair : 계단 게임 최고 점수
+bestscore_dungeon : 던젼 게임 최고 점수
+bestscore_rope : 줄넘기 게임 최고 점수
+col_coin : 지금까지 모은 코인들
+
+

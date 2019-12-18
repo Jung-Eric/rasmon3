@@ -1,0 +1,50 @@
+그림
+item_temp
+stair_shine
+award_recv
+
+
+수
+item_coin
+item_temps
+function_on 0이면 꺼지고 1이면 켜진다
+
+sen_temp = 25
+sen_hum = 30
+sen_lum = 300
+
+
+deg_full = 50
+deg_temp = 0
+deg_exp = 0
+
+slimeB[0]
+slimeE[0]
+
+slimeB[0~2] 기본
+slimeB[3~5] 약덮
+slimeB[6~8] 덮
+slimeB[9~11] 약춥
+slimeB[12~14] 춮
+
+slimeE[11~13] 덮
+slimeE[14~16] 춮
+
+
+
+1. 포만감 (밥 많이 먹이면 된다 - 서서히 감소) - [ 초록색 ]    < 0 ~ 100 >
+2. 캐릭터 온도 (캐릭터 온도를 표기)  [빨간색, 파란색 사이에서 온도를 표기]   < -50 ~ 0 ~ 50 >
+	너무 춥거나 더우면 캐릭터가 색이 바뀌고 표정이 안좋아진다. 더운 표정 / 추운 표정
+	너무 심하면 우는 표정으로 바뀐다.
+3. 경험치 이걸 다 채우면 진화한다 [노란색] < 0 ~ 1000 >
+
+함수
+show_degree()
+make_shade()
+make_anime_sl_norm(num)
+
+기능들
+pygame.transform.scale(item_nonslot,(90,90))
+pygame.draw.rect(screen, (255,255,255,128), [시작,시작,8,8)
+
+ pygame.draw.rect(screen, [240+sup_color_extra2,214+sup_color_extra2,81+sup_color_extra],[45+6*i-4,178+animo+animo2-4,9,8])

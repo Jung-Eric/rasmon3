@@ -1,0 +1,129 @@
+0. 기본 세팅 예시
+
+import pygame
+import sys
+
+SCREEN_WIDTH = 640
+SCREEN_HEIGHT = 480
+
+white = (255, 255, 255)
+black = (0, 0, 0)
+
+pygame.init()
+pygame.display.set_caption("Simple PyGame Example")
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
+pos_x = 200
+pos_y = 200
+
+clock = pygame.time.Clock()
+while True:
+    clock.tick(60)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            sys.exit()
+
+    key_event = pygame.key.get_pressed()
+    if key_event[pygame.K_LEFT]:
+        pos_x -= 1
+
+    if key_event[pygame.K_RIGHT]:
+        pos_x += 1
+
+    if key_event[pygame.K_UP]:
+        pos_y -= 1
+
+    if key_event[pygame.K_DOWN]:
+        pos_y += 1
+
+    screen.fill(black)
+    pygame.draw.circle(screen, white, (pos_x, pos_y), 20)
+    pygame.display.update()
+
+
+---------------------------------------------------------------------------------------------------
+1. 이미지 띄우기
+
+
+
+
+---------------------------------------------------------------------------------------------------
+2. key 입력 받기!
+
+while True:
+    clock.tick(60)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            sys.exit()
+
+    key_event = pygame.key.get_pressed()
+    if key_event[pygame.K_LEFT]:
+        pos_x -= 1
+
+    if key_event[pygame.K_RIGHT]:
+        pos_x += 1
+
+    if key_event[pygame.K_UP]:
+        pos_y -= 1
+
+    if key_event[pygame.K_DOWN]:
+        pos_y += 1
+
+ (그러니까 이거 시스템이 좌표를 저장한 다음에 계속 업데이트 하며 업데이트 하면서
+  계속 그리는 방식이다. 게임 오브젝트를 생성한다기 보다는 어떻게 그려내느냐가
+  우선한다)
+ 
+---------------------------------------------------------------------------------------------------
+3. 기본 세팅
+
+pygame.init()
+이걸로 초기화 (맨 처음에 두어애 한다.)
+
+---------------------------------------------------------------------------------------------------
+4. 클락 설정하기
+
+clock = pygame.time.Clock()
+while True:
+    clock.tick(60)
+    ~~
+    pygame.display.update()
+
+해당 클락에 따라 구동시킨다. 초당 프레임 조절이겠지?
+
+---------------------------------------------------------------------------------------------------
+5. 스크린 크기 설정
+
+size = [400,300]
+screen = pygame.display.set_mode(size)
+
+또는
+
+SCREEN_WIDTH = 640
+SCREEN_HEIGHT = 480
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
+이건 init 다음에 바로 해준다. 즉 while 다음에 처리한
+
+---------------------------------------------------------------------------------------------------
+6. 게임 이름 설정
+
+pygame.display.set_caption("Game Title")
+
+---------------------------------------------------------------------------------------------------
+7. 게임 글자 UI 설정(함수 사용 시)
+
+global gamepad
+게임 패드를 전역으로 받아온다.
+font = pygame.font.SysFont(None, 20)
+폰트 우선 설정
+text = font.render('Text you want!: ' + 
+
+---------------------------------------------------------------------------------------------------
+8. 
+
+---------------------------------------------------------------------------------------------------
+9. 충돌 계산
+
+어려울 것 없이 좌표를 지속적으로 연산해서
+좌표가 특정 수준까지 가까워지면 충돌 인자를 TRUE으로 만들고
+

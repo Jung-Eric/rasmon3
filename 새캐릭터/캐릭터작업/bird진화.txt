@@ -1,0 +1,6 @@
+bird		56*40
+birder		56*48
+birdest1	64*52
+birdest2	64*52
+
+hum		56*48

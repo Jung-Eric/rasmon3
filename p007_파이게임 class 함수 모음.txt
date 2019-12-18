@@ -1,0 +1,18 @@
+[spritesheept.py]
+class spritesheet
+  - __init__(self, filename) : 생성자, 파일명을 통해 투명값이 적용된 sprite package 파일 받아오기
+  - image_at(self, rectangle) : sprite package 파일을 지정한 범위로 잘라서 sprite 별로 객체화
+
+[test001.py]
+
+ - call_back(types) : 게임 배경 호출 함수
+ - call_character(type, base, emo) : 게임 캐릭터 호출 함수
+ - make_anime_norm(num) : 캐릭터 일반 애니메이션 호출 함수
+ - make_anime_sl_jm(num) : 캐릭터 점프 애니메이션 호출 함수
+ - make_anime_sl_mgjm(num,dir) : 미니게임 캐릭터 점프 애니메이션 호출 함수
+ - make_anime_sl_eat(num) : 캐릭터 육성 애니메이션 호출 함수
+ - base_button(x,y,ext) : 육성 선택 버튼 출력, 작동 함수
+ - ctrl_button(x,y,ext) : 컨트롤 선택 버튼 출력, 작동 함수
+ - game_button(x,y) : 미니게임 선택 버튼 출력, 작동 함수
+ - make_stair(x,num) : 계단 미니게임 계단 출력 함수
+ - make_rand_stair(x) : 계단 미니게임 계단 생성 함수

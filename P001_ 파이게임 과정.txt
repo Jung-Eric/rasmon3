@@ -1,0 +1,5 @@
+1. pip를 사용하지 못할 수도 있으니까.. 
+  C:\Users\HP\AppData\Local\Programs\Python\Python37 이걸 고급 시스템의
+  환경설정에서 추가해둔다.
+2. 이제 관리자 cmd에서 pip install pygame으로 인스톨 할 수 있다!
+3. 이제 import해서 사용하자!

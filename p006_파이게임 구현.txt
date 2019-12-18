@@ -1,0 +1,108 @@
+--- 모든 인자를 알아보자 ---
+On_norm = 1
+On_game = 0
+-
+On_work = 0
+On_aniCount = 0
+-
+norm_num = 0
+motion_num = 0
+-
+btnB_active = 0
+btnB_ani = 0
+btnC_active = 0
+btnC_ani = 0
+btnG_active = 0
+On_miniGame_stair = 0
+On_miniGame_Dun = 0
+
+coin_motion_num = 0
+game_start_time_num = 0
+game_end_time_num = 0
+
+game_stair_reverse_check = 0
+game_stair_reverse_state = 0
+
+--- 이미지 배열 호출 명을 알아보자 ---
+base[] (기본 배경)
+-
+slimeE[] (슬라임 표정 모음)
+slimeE2 = [] (미니게임용)
+slimeB[] (슬라임 기본 모음)
+slimeB2 = [] (미니게임용)
+slimeJM[] (슬라임 점프 모션)
+slimeJM2 = []   (미니게임용)
+
+-
+btnBase[] (육성 버튼)
+btnCrtl[] (컨트롤 버튼)
+btnGame[] (미니게임 버튼)
+
+btnBaseSel (육성 선택 테두리)
+btnCtrlSel (육성 선택 테두리)
+btnGameSel (미니게임 선택 테두리)
+btnFriendSel (친구 선택 테두리)
+
+back_small (UI 소형배경)
+back_big (UI 대형배경_아이템,업적 전용)
+money_slot (가진 돈)
+item_slot (아이템 칸)
+item_selected (아이템 칸 선택)
+item_nonslot (비어있는 아이템 칸)
+
+award_type (업적 종류)
+award_recv (업적 진행수준)
+award_slot (업적 칸)
+award_selected (업적 칸 선택)
+-
+dun_block[] (미니게임_던전_블록)
+dun_ghost[] (미니게임_던전_귀신)
+dun_fire[] (미니게임_던전_횃불)
+-
+stair_block[] (미니게임_점프_발판) 6
+stair_cloud[](미니게임_점프_구름) 12
+stair_shine[] (미니게임_점프_섬광) 4
+stair_meteor[] (미니게임_점프_유성) 6
+-
+rope_helper[] (미니게임_줄넘기_도우미) 9
+-
+all_coin[] (미니게임_공통_동전) 10
+all_jem[] (미니게임_고통_보석) 10
+all_numberFont[] (미니게임_공통_숫자) 10
+all_order[] (미니게임_공통_지시문) 5
+
+-
+dun_space (배열 아닌, 점프 배경)
+-
+--- 아이템 전체 목록 ---
+item_coin = 0
+item_jem[]
+item_jemS[]
+
+--- 함수 호출 명을 알아보자 ---
+# 배경 번호에 따른 배경을 출력하는 함수
+def call_back(types)
+
+# 캐릭터 타입 / 형태 종류 / 감정 종류
+def call_character(type, base, emo)
+
+# 캐릭터 타입
+def call_character_jmp(type, jump)
+
+# 계단 생성
+def make_stair(x,num)
+
+# 랜덤 보상 생성
+def make_rand_prize(x)
+
+# 계단 보상 그리기
+def draw_prize(x,num,type):
+
+# 코인 애니메이션
+def make_animation_coin(x,y)
+
+#게임 내 아이템 획득
+def Get_Prize(type)
+
+#아이템 UI 출력
+def UI_ITEM(sel,order)
